@@ -14,6 +14,7 @@ let
     fileManager
     kbdLayout
     kbdVariant
+    kbdLayouts
     defaultWallpaper
     ;
 
@@ -169,7 +170,7 @@ in
               "polkit-agent-helper-1"
             ];
             input = {
-              kb_layout = "${kbdLayout},ru";
+              kb_layout = lib.concatStringsSep "," kbdLayouts;
               kb_variant = "${kbdVariant},";
               repeat_delay = 275; # or 212
               repeat_rate = 35;
@@ -587,7 +588,7 @@ in
 
             monitor = [
               # Easily plug in any monitor
-              ",preferred,auto,1"
+              ",highrr,auto,1"
 
               # My Monitors (Fine to leave these since i used the serial numbers)
               "desc:BNQ BenQ EW277HDR 99J01861SL0,preferred,-1920x0,1"

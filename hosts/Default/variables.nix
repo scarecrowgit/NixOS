@@ -17,10 +17,10 @@
   browser = "zen-beta"; # zen-beta, firefox, floorp
   fileManager = "yazi"; # yazi, lf, thunar
   shell = "nushell"; # zsh, bash
-  games = true; # Enable/Disable gaming module
+  games = false; # Enable/Disable gaming module
 
   # Hardware
-  hostname = "Singularity";
+  hostname = "starship";
   videoDriver = "amdgpu"; # nvidia, amdgpu, intel
   nvidiaChannel = "legacy_580"; # stable, latest, beta, legacy_xxx
   bluetoothSupport = false; # Whether your motherboard supports bluetooth
@@ -29,7 +29,8 @@
   timezone = "Asia/Tbilisi";
   locale = "en_GB.UTF-8";
   clock24h = true;
-  kbdLayout = "gb";
-  kbdVariant = "extd";
-  consoleKeymap = "uk";
+  kbdLayout = "us";
+  kbdVariant = "";
+  kbdLayouts = ["us" "ru"];  # Additional layouts
+  consoleKeymap = "us";
 }
