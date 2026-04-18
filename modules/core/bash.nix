@@ -33,9 +33,9 @@
           ];
           sessionVariables = {
             FZF_DEFAULT_OPTS = ''
-              --color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
-              --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
-              --color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796'';
+              --color=bg+:#3e4451,bg:#121212,spinner:#56b6c2,hl:#e06c75 \
+              --color=fg:#abb2bf,header:#e06c75,info:#c678dd,pointer:#61afef \
+              --color=marker:#98c379,fg+:#abb2bf,prompt:#c678dd,hl+:#e06c75'';
           };
           shellAliases = {
             lf = ''

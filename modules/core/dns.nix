@@ -1,15 +1,5 @@
 { ... }:
 {
-  networking.firewall = {
-    allowedTCPPorts = [
-      53
-      5335
-    ];
-    allowedUDPPorts = [
-      53
-      5335
-    ];
-  };
   # Disable systemd dns resolver
   services.resolved = {
     enable = false;

@@ -1,15 +1,14 @@
 /**
  *
- * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
- * 
+ * One Dark Pro Monokai Darker
+ *
  * Colors
  **/
 
 * {
-    background:     #1E2127FF;
-    background-alt: #282B31FF;
-    foreground:     #FFFFFFFF;
+    background:     #121212FF;
+    background-alt: #1a1a1aFF;
+    foreground:     #abb2bfFF;
     selected:       #61AFEFFF;
     active:         #98C379FF;
     urgent:         #E06C75FF;

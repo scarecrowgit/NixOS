@@ -48,8 +48,8 @@
           window {
             font-family: monospace;
             font-size: 14pt;
-            color: #cdd6f4; /* text */
-            background-color: rgba(30, 30, 46, 0.5);
+            color: #abb2bf; /* text */
+            background-color: rgba(18, 18, 18, 0.5);
           }
 
           button {
@@ -57,18 +57,18 @@
             background-position: center;
             background-size: 25%;
             border: none;
-            background-color: rgba(30, 30, 46, 0);
+            background-color: rgba(18, 18, 18, 0);
             margin: 5px;
             transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
           }
 
           button:hover {
-            background-color: rgba(49, 50, 68, 0.1);
+            background-color: rgba(62, 68, 81, 0.1);
           }
 
           button:focus {
-            background-color: #cba6f7;
-            color: #1e1e2e;
+            background-color: #61afef;
+            color: #121212;
           }
           #lock {
             background-image: image(url("icons/lock.png"));

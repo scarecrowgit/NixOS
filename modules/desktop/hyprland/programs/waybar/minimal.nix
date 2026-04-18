@@ -203,9 +203,9 @@ in
                 on-scroll = 1;
                 on-click-right = "mode";
                 format = {
-                  months = "<span color='#ffead3'><b>{}</b></span>";
-                  weekdays = "<span color='#ffcc66'><b>{}</b></span>";
-                  today = "<span color='#ff6699'><b>{}</b></span>";
+                  months = "<span color='#abb2bf'><b>{}</b></span>";
+                  weekdays = "<span color='#e5c07b'><b>{}</b></span>";
+                  today = "<span color='#e06c75'><b>{}</b></span>";
                 };
               };
               actions = {
@@ -362,36 +362,37 @@ in
             padding: 0px;
           }
 
-          @define-color base   #1e1e2e;
-          @define-color mantle #181825;
-          @define-color crust  #11111b;
+          /* One Dark Pro Monokai Darker */
+          @define-color base   #121212;
+          @define-color mantle #0d0d0d;
+          @define-color crust  #0a0a0a;
 
-          @define-color text     #cdd6f4;
-          @define-color subtext0 #a6adc8;
-          @define-color subtext1 #bac2de;
+          @define-color text     #abb2bf;
+          @define-color subtext0 #828997;
+          @define-color subtext1 #abb2bf;
 
-          @define-color surface0 #313244;
-          @define-color surface1 #45475a;
-          @define-color surface2 #585b70;
+          @define-color surface0 #1a1a1a;
+          @define-color surface1 #3e4451;
+          @define-color surface2 #5c6370;
 
-          @define-color overlay0 #6c7086;
-          @define-color overlay1 #7f849c;
-          @define-color overlay2 #9399b2;
+          @define-color overlay0 #5c6370;
+          @define-color overlay1 #828997;
+          @define-color overlay2 #abb2bf;
 
-          @define-color blue      #89b4fa;
-          @define-color lavender  #b4befe;
-          @define-color sapphire  #74c7ec;
-          @define-color sky       #89dceb;
-          @define-color teal      #94e2d5;
-          @define-color green     #a6e3a1;
-          @define-color yellow    #f9e2af;
-          @define-color peach     #fab387;
-          @define-color maroon    #eba0ac;
-          @define-color red       #f38ba8;
-          @define-color mauve     #cba6f7;
-          @define-color pink      #f5c2e7;
-          @define-color flamingo  #f2cdcd;
-          @define-color rosewater #f5e0dc;
+          @define-color blue      #61afef;
+          @define-color lavender  #61afef;
+          @define-color sapphire  #56b6c2;
+          @define-color sky       #56b6c2;
+          @define-color teal      #56b6c2;
+          @define-color green     #98c379;
+          @define-color yellow    #e5c07b;
+          @define-color peach     #d19a66;
+          @define-color maroon    #e06c75;
+          @define-color red       #e06c75;
+          @define-color mauve     #c678dd;
+          @define-color pink      #c678dd;
+          @define-color flamingo  #e06c75;
+          @define-color rosewater #abb2bf;
 
           window#waybar {
             transition-property: background-color;
@@ -405,33 +406,33 @@ in
           }
 
           tooltip {
-            background: @theme_base_color;
+            background: @base;
             border-radius: 9px;
           }
 
           tooltip label {
-            color: #cad3f5;
+            color: #abb2bf;
             margin-right: 6px;
             margin-left: 6px;
           }
 
           /* This section can be use if you want to separate waybar modules */
           .modules-left {
-            background: @theme_base_color;
+            background: @base;
             border: 1px solid @blue;
             padding-right: 16px;
             padding-left: 3px;
             border-radius: 11px;
           }
           .modules-center {
-            background: @theme_base_color;
+            background: @base;
             border: 1px solid @overlay0;
             padding-right: 6px;
             padding-left: 6px;
             border-radius: 11px;
           }
           .modules-right {
-            background: @theme_base_color;
+            background: @base;
             border: 1px solid @blue;
             padding-right: 16px;
             padding-left: 16px;
@@ -510,7 +511,7 @@ in
 
           #battery.critical:not(.charging) {
             background-color: @red;
-            color: @theme_text_color;
+            color: @text;
             animation-name: blink;
             animation-duration: 0.5s;
             animation-timing-function: linear;
@@ -532,12 +533,12 @@ in
             color: @blue
           }
           #clock {
-            color: @yellow;
+            color: @green;
           }
 
           #custom-icon {
             font-size: 16px;
-            color: #cba6f7;
+            color: #c678dd;
           }
 
           #custom-gpuinfo {
@@ -603,7 +604,7 @@ in
           }
 
           #workspaces button.active {
-            color: @peach;
+            color: @green;
             border-radius: 11px;
             padding-left: 9px;
             padding-right: 9px;
@@ -631,11 +632,11 @@ in
           }
 
           #custom-cava_mviz {
-            color: @pink;
+            color: @green;
           }
 
           #cava {
-            color: @pink;
+            color: @green;
           }
 
           #mpris {

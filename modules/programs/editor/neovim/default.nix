@@ -1,5 +1,4 @@
 {
-  inputs,
   host,
   pkgs,
   ...
@@ -14,11 +13,12 @@ in
     nil
     nixfmt-tree
     ripgrep
+    gnumake # needed for luasnip jsregexp
   ]; # Dependencies
   home-manager.sharedModules = [
     (_: {
       programs.neovim.enable = true;
-      xdg.configFile."nvim".source = inputs.neovim;
+      xdg.configFile."nvim".source = ./config;
       xdg.desktopEntries = {
         "nvim" = {
           name = "Neovim wrapper";

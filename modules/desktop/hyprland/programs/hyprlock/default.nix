@@ -15,7 +15,7 @@ in
           background = [
             {
               monitor = "";
-              color = "rgb(36, 39, 58)";
+              color = "rgb(18, 18, 18)";
               path = "${../../../../themes/wallpapers/${hyprlockWallpaper}}";
 
               new_optimizations = true;
@@ -34,10 +34,10 @@ in
               monitor = "";
               size = "250, 50";
               outline_thickness = 3;
-              outer_color = "rgb(198, 160, 246)";
-              inner_color = "rgb(36, 39, 58)";
-              font_color = "rgb(198, 160, 246)";
-              fail_color = "rgb(237, 135, 150)";
+              outer_color = "rgb(97, 175, 239)";
+              inner_color = "rgb(18, 18, 18)";
+              font_color = "rgb(97, 175, 239)";
+              fail_color = "rgb(224, 108, 117)";
               fail_text = "<i>$FAIL <b>($ATTEMPTS)</b></i>";
               fail_transition = 300;
               fade_on_empty = false;
@@ -57,7 +57,7 @@ in
               # text = "cmd[update:1000] echo \"<b><big> $(date +\"%H:%M:%S\") </big></b>\"";
               text = "$TIME";
               font_size = 64;
-              color = "rgb(198, 160, 246)";
+              color = "rgb(97, 175, 239)";
               position = "0, 16";
               valign = "center";
               halign = "center";
@@ -65,7 +65,7 @@ in
             {
               monitor = "";
               text = "Hello <span text_transform=\"capitalize\" size=\"larger\">$USER!</span>";
-              color = "rgb(198, 160, 246)";
+              color = "rgb(97, 175, 239)";
               font_size = 20;
               position = "0, 100";
               halign = "center";
@@ -74,7 +74,7 @@ in
             {
               monitor = "";
               text = "Current Layout : $LAYOUT";
-              color = "rgb(198, 160, 246)";
+              color = "rgb(97, 175, 239)";
               font_size = 14;
               position = "0, 20";
               halign = "center";
@@ -84,7 +84,7 @@ in
                  {
                 monitor = "";
                 text = "Enter your password to unlock.";
-                color = "rgb(198, 160, 246)";
+                color = "rgb(97, 175, 239)";
                 font_size = 14;
                 position = "0, 60";
                 halign = "center";

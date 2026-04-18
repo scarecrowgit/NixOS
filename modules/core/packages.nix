@@ -26,6 +26,7 @@
     kdePackages.qtvirtualkeyboard # Sddm Dependency
     fzf # Fuzzy Finder
     fd # Better Find
+    fastfetch
     git # Git
     zoxide # Fast directory jumping (z/cd replacement)
     gh # Github Authentication Client
@@ -36,6 +37,8 @@
     tldr # Improved Man
     unrar # Tool For Handling .rar Files
     unzip # Tool For Handling .zip Files
+    claude-code
+    opencode
     # aider-chat # AI in terminal (Optional: Client only)
     # cmatrix # Matrix Movie Effect In Terminal
     # cowsay # Great Fun Terminal Program

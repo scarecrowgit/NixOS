@@ -39,6 +39,7 @@ in
     ../../modules/programs/editor/${vars.editor} # Set editor defined in variables.nix
     ../../modules/programs/file-manager/${vars.fileManager} # Set file-manager defined in variables.nix
     ../../modules/programs/cli/tmux
+    ../../modules/programs/cli/nushell
     ../../modules/programs/cli/direnv
     ../../modules/programs/cli/lazygit
     ../../modules/programs/cli/cava

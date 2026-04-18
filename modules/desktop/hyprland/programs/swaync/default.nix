@@ -198,44 +198,44 @@ in
           @define-color shadow rgba(0, 0, 0, 0.25);
           /*
           *
-          * Catppuccin Mocha palette
-          * Maintainer: rubyowo
+          * One Dark Pro Monokai Darker palette
           *
           */
 
-          @define-color base   #1E1D2E;
-          @define-color mantle #181825;
-          @define-color crust  #11111b;
+          /* One Dark Pro Monokai Darker */
+          @define-color base   #121212;
+          @define-color mantle #0d0d0d;
+          @define-color crust  #0a0a0a;
 
-          @define-color text     #cdd6f4;
-          @define-color subtext0 #a6adc8;
-          @define-color subtext1 #bac2de;
+          @define-color text     #abb2bf;
+          @define-color subtext0 #828997;
+          @define-color subtext1 #abb2bf;
 
-          @define-color surface0 #313244;
-          @define-color surface1 #45475a;
-          @define-color surface2 #585b70;
+          @define-color surface0 #1a1a1a;
+          @define-color surface1 #3e4451;
+          @define-color surface2 #5c6370;
 
-          @define-color overlay0 #6c7086;
-          @define-color overlay1 #7f849c;
-          @define-color overlay2 #9399b2;
+          @define-color overlay0 #5c6370;
+          @define-color overlay1 #828997;
+          @define-color overlay2 #abb2bf;
 
-          @define-color blue      #89b4fa;
-          @define-color lavender  #b4befe;
-          @define-color sapphire  #74c7ec;
-          @define-color sky       #89dceb;
-          @define-color teal      #94e2d5;
-          @define-color green     #a6e3a1;
-          @define-color yellow    #f9e2af;
-          @define-color peach     #fab387;
-          @define-color maroon    #eba0ac;
-          @define-color red       #f38ba8;
-          @define-color mauve     #cba6f7;
-          @define-color pink      #f5c2e7;
-          @define-color flamingo  #f2cdcd;
-          @define-color rosewater #f5e0dc;
+          @define-color blue      #61afef;
+          @define-color lavender  #61afef;
+          @define-color sapphire  #56b6c2;
+          @define-color sky       #56b6c2;
+          @define-color teal      #56b6c2;
+          @define-color green     #98c379;
+          @define-color yellow    #e5c07b;
+          @define-color peach     #d19a66;
+          @define-color maroon    #e06c75;
+          @define-color red       #e06c75;
+          @define-color mauve     #c678dd;
+          @define-color pink      #c678dd;
+          @define-color flamingo  #e06c75;
+          @define-color rosewater #abb2bf;
 
-          @define-color base_lighter  #1e1e2e;
-          @define-color mauve_lighter #caa6f7;
+          @define-color base_lighter  #1a1a1a;
+          @define-color mauve_lighter #c678dd;
 
           * {
             font-family: "JetBrainsMono NFM SemiBold", monospace;

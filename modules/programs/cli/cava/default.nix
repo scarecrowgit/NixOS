@@ -13,15 +13,15 @@
           color = {
             gradient = 1;
 
-            # Mocha
-            gradient_color_1 = "'#94e2d5'";
-            gradient_color_2 = "'#89dceb'";
-            gradient_color_3 = "'#74c7ec'";
-            gradient_color_4 = "'#89b4fa'";
-            gradient_color_5 = "'#cba6f7'";
-            gradient_color_6 = "'#f5c2e7'";
-            gradient_color_7 = "'#eba0ac'";
-            gradient_color_8 = "'#f38ba8'";
+            # One Dark Pro Monokai Darker
+            gradient_color_1 = "'#56b6c2'";
+            gradient_color_2 = "'#61afef'";
+            gradient_color_3 = "'#98c379'";
+            gradient_color_4 = "'#e5c07b'";
+            gradient_color_5 = "'#d19a66'";
+            gradient_color_6 = "'#c678dd'";
+            gradient_color_7 = "'#e06c75'";
+            gradient_color_8 = "'#e06c75'";
           };
         };
       };

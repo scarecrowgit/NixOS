@@ -5,173 +5,91 @@
       programs.starship = {
         enable = true;
         settings = {
-          add_newline = false;
-          scan_timeout = 10;
-          format = "$username$hostname$directory$git_branch$git_state$git_status$cmd_duration$python$nix_shell$character";
-          directory = {
-            truncate_to_repo = false;
-            read_only = " ro";
-            style = "#57C7FF";
-            # style = "bold italic bright-blue";
-          };
-          /*
-               username = {
-              style_user = "green bold";
-              style_root = "red bold";
-              format = "[$user]($style)";
-              disabled = false;
-              show_always = true;
-            };
-          */
+          add_newline = true;
+          command_timeout = 500;
+          format = ''
+            [┌───────────────────────────────────────────────────>](bold green)
+            [│](bold green)$directory$git_branch$git_status$python$kubernetes$rust$golang$docker_context$nix_shell
+            [└─>](bold green) '';
           character = {
-            success_symbol = "[❯](#FF6AC1)";
-            error_symbol = "[❯](#FF5C57)";
-            vimcmd_symbol = "[❮](bright-green)";
+            success_symbol = "[➜](bold green)";
+            error_symbol = "[✗](bold red)";
+          };
+          directory = {
+            truncation_length = 3;
+            truncate_to_repo = true;
+            format = "[$path]($style)[$read_only]($read_only_style) ";
+            style = "bold cyan";
+            read_only = " 🔒";
+            truncation_symbol = "…/";
           };
           git_branch = {
-            format = "[$branch]($style)";
-            symbol = "git ";
-            style = "242";
+            symbol = "🌱 ";
+            format = "on [$symbol$branch]($style) ";
+            style = "bold purple";
           };
           git_status = {
-            format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)";
-            style = "cyan";
-            conflicted = "​";
-            untracked = "​";
-            modified = "​";
-            staged = "​";
-            renamed = "​";
-            deleted = "​";
-            stashed = "≡";
+            format = ''([\[$all_status$ahead_behind\]]($style) )'';
+            style = "bold red";
+            conflicted = "🏳";
+            ahead = "⇡\${count}";
+            behind = "⇣\${count}";
+            diverged = "⇕⇡\${ahead_count}⇣\${behind_count}";
+            untracked = "🤷";
+            stashed = "📦";
+            modified = "📝";
+            staged = ''[++\($count\)](green)'';
+            renamed = "👅";
+            deleted = "🗑";
           };
-          git_state = {
-            format = ''\([$state( $progress_current/$progress_total)]($style)\) '';
-            style = "bright-black";
-          };
-          cmd_duration = {
-            format = "[$duration]($style) ";
-            style = "yellow";
-          };
-          aws = {
-            symbol = "aws ";
-          };
-          azure = {
-            symbol = "az ";
-          };
-          bun = {
-            symbol = "bun ";
-          };
-
-          cmake = {
-            symbol = "cmake ";
-          };
-          deno = {
-            symbol = "deno ";
-          };
-          docker_context = {
-            symbol = "docker ";
-          };
-          golang = {
-            symbol = "go ";
-          };
-          # hostname = {
-          #   ssh_only = false;
-          #   format = " on [$hostname](bold red)\n";
-          #   disabled = false;
-          # };
-          lua = {
-            symbol = "lua ";
+          python = {
+            symbol = "🐍 ";
+            format = ''via [$\{symbol}$\{pyenv_prefix}($\{version} )(\($virtualenv\) )]($style)'';
+            style = "yellow bold";
+            pyenv_version_name = false;
           };
           nodejs = {
-            symbol = "nodejs ";
+            disabled = true;
+            symbol = "⬢ ";
+            format = "via [$symbol($version )]($style)";
+            style = "bold green";
           };
-          memory_usage = {
-            symbol = "memory ";
+          kubernetes = {
+            symbol = "☸ ";
+            format = ''via [$symbol$context( \($namespace\))]($style) '';
+            style = "cyan bold";
+            disabled = false;
           };
-          nim = {
-            symbol = "nim ";
+          rust = {
+            symbol = "🦀 ";
+            format = "via [$symbol($version )]($style)";
+            style = "bold red";
           };
-
+          golang = {
+            symbol = "🐹 ";
+            format = "via [$symbol($version )]($style)";
+            style = "bold cyan";
+          };
+          docker_context = {
+            symbol = "🐳 ";
+            format = "via [$symbol$context]($style) ";
+            style = "blue bold";
+            only_with_files = true;
+          };
+          cmd_duration = {
+            min_time = 500;
+            format = "took [$duration]($style) ";
+            style = "bold yellow";
+          };
+          time = {
+            disabled = true;
+            format = ''🕙[\[ $time \]]($style) '';
+            time_format = "%T";
+            style = "bold white";
+          };
           nix_shell = {
             symbol = "❄️ ";
             format = "[$symbol]($style)";
-          };
-
-          shell = {
-            disabled = false;
-            style = "cyan";
-            bash_indicator = "";
-            powershell_indicator = "";
-          };
-
-          os.symbols = {
-            Alpaquita = "alq ";
-            Alpine = "alp ";
-            Amazon = "amz ";
-            Android = "andr ";
-            Arch = "rch ";
-            Artix = "atx ";
-            CentOS = "cent ";
-            Debian = "deb ";
-            DragonFly = "dfbsd ";
-            Emscripten = "emsc ";
-            EndeavourOS = "ndev ";
-            Fedora = "fed ";
-            FreeBSD = "fbsd ";
-            Garuda = "garu ";
-            Gentoo = "gent ";
-            HardenedBSD = "hbsd ";
-            Illumos = "lum ";
-            Linux = "lnx ";
-            Mabox = "mbox ";
-            Macos = "mac ";
-            Manjaro = "mjo ";
-            Mariner = "mrn ";
-            MidnightBSD = "mid ";
-            Mint = "mint ";
-            NetBSD = "nbsd ";
-            NixOS = "nix ";
-            OpenBSD = "obsd ";
-            OpenCloudOS = "ocos ";
-            openEuler = "oeul ";
-            openSUSE = "osuse ";
-            OracleLinux = "orac ";
-            Pop = "pop ";
-            Raspbian = "rasp ";
-            Redhat = "rhl ";
-            RedHatEnterprise = "rhel ";
-            Redox = "redox ";
-            Solus = "sol ";
-            SUSE = "suse ";
-            Ubuntu = "ubnt ";
-            Unknown = "unk ";
-            Windows = "win ";
-          };
-          package = {
-            symbol = "pkg ";
-          };
-          purescript = {
-            symbol = "purs ";
-          };
-          python = {
-            format = "[$virtualenv]($style) ";
-            style = "bright-black";
-            symbol = "py ";
-          };
-          rust = {
-            symbol = "rs ";
-          };
-          status = {
-            symbol = "[x](bold red) ";
-          };
-          sudo = {
-            symbol = "sudo ";
-          };
-          terraform = {
-            symbol = "terraform ";
-          };
-          zig = {
-            symbol = "zig ";
           };
         };
       };

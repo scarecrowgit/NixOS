@@ -1,16 +1,4 @@
 { pkgs, ... }:
-let
-  dreamsofcode-io-catppuccin-tmux = pkgs.tmuxPlugins.mkTmuxPlugin {
-    pluginName = "catppuccin";
-    version = "unstable-2023-01-06";
-    src = pkgs.fetchFromGitHub {
-      owner = "dreamsofcode-io";
-      repo = "catppuccin-tmux";
-      rev = "b4e0715356f820fc72ea8e8baf34f0f60e891718";
-      sha256 = "sha256-FJHM6LJkiAwxaLd5pnAoF3a7AE1ZqHWoCpUJE0ncCA8=";
-    };
-  };
-in
 {
   home-manager.sharedModules = [
     (_: {
@@ -18,49 +6,43 @@ in
         enable = true;
         clock24 = true;
         keyMode = "vi";
-        # terminal = "screen-256color";
-        # terminal = "tmux-256color";
-        historyLimit = 100000;
+        terminal = "screen-256color";
+        historyLimit = 1000000;
         plugins = with pkgs.tmuxPlugins; [
-          dreamsofcode-io-catppuccin-tmux
-          # catppuccin
           sensible
           vim-tmux-navigator
-
-          # {
-          #   plugin = resurrect;
-          #   extraConfig =
-          #     ''
-          #       set -g @resurrect-strategy-vim 'session'
-          #       set -g @resurrect-strategy-nvim 'session'
-          #       set -g @resurrect-capture-pane-contents 'on'
-          #     ''
-          # }
-          # {
-          #   plugin = continuum;
-          #   extraConfig = ''
-          #     set -g @continuum-restore 'on'
-          #     set -g @continuum-boot 'on'
-          #     set -g @continuum-save-interval '10'
-          #     set -g @continuum-systemd-start-cmd 'start-server'
-          #   '';
-          # }
         ];
         extraConfig = ''
+          # Terminal overrides for true color
+          set-option -g terminal-overrides ',xterm-256color:RGB'
+
+          # Prefix
           unbind C-b
           set -g prefix C-a
           bind C-a send-prefix
 
           # Options
-          set -g @catppuccin_flavour 'mocha'
           set -g mouse on
-          set -g allow-rename off
-          set -g status-position top
           set -g base-index 1
           set -g pane-base-index 1
+          set -g detach-on-destroy off
+          set -g escape-time 10
           set -g renumber-windows on
+          set -g set-clipboard on
+          set -g status-position top
+          set -g allow-rename off
           set-window-option -g pane-base-index 1
-          set -ga terminal-overrides ",*:Tc"
+
+          # One Dark Pro Monokai Darker theme
+          set -g status-style "bg=#0f0f0f"
+          set -g window-style "fg=colour247,bg=default"
+          set -g window-active-style "fg=colour255,bg=default"
+          setw -g window-status-current-style "bg=#4276ff"
+          set -g status-right-style "fg=colour247"
+          set -g status-right "%d %b %H:%M"
+          set -g pane-border-style "fg=#3e4451"
+          set -g pane-active-border-style "fg=#61afef"
+          set -g message-style "bg=#1a1a1a,fg=#abb2bf"
 
           # Tmux sessionizer
           bind-key -r f run-shell "tmux neww tmux-sessionizer"
@@ -84,10 +66,6 @@ in
           bind j select-pane -D
 
           # Resize panes
-          # bind -n M-h resize-pane -L 2
-          # bind -n M-l resize-pane -R 2
-          # bind -n M-k resize-pane -U 2
-          # bind -n M-j resize-pane -D 2
           bind -n M-Left resize-pane -L 2
           bind -n M-Right resize-pane -R 2
           bind -n M-Up resize-pane -U 2
@@ -103,7 +81,6 @@ in
           # Select windows
           bind -n S-Left  previous-window
           bind -n S-Right next-window
-
           bind -n C-M-h  previous-window
           bind -n C-M-l next-window
 

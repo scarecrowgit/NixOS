@@ -1,0 +1,9 @@
+# Lazy.nvim
+lazy-lock.json
+lazyvim.json
+
+# LSP
+.luarc.json
+
+# Misc
+.DS_Store
