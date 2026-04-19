@@ -11,8 +11,8 @@ in
     firewall = {
       enable = true;
       allowPing = true;
-      allowedTCPPorts = [ 53 2121 21210 21211 21212 21213 21214 21215 21216 21217 21218 21219 3005 5335 ];
-      allowedUDPPorts = [ 53 5335 ];
+      allowedTCPPorts = [ 53 139 445 2121 21210 21211 21212 21213 21214 21215 21216 21217 21218 21219 3005 5335 ];
+      allowedUDPPorts = [ 53 137 138 5335 ];
     };
   };
 
