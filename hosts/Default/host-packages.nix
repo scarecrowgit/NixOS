@@ -7,6 +7,7 @@
     github-desktop
     mattermost-desktop
     thunderbird
+    ayugram-desktop
     (python3.withPackages (ps: with ps; [ pyftpdlib ]))
     # pokego # Overlayed
   ];

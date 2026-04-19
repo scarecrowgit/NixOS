@@ -1,5 +1,6 @@
 { pkgs, ... }:
 {
+  imports = [ ./aliases.nix ];
   environment.systemPackages = with pkgs; [
     nushell
     starship # needed for prompt integration
@@ -24,20 +25,6 @@
             show_banner: false
             edit_mode: vi
           }
-
-          # Aliases
-          alias ll = ls -l
-          alias la = ls -la
-          alias v = nvim
-          alias g = git
-          alias gs = git status
-          alias ga = git add
-          alias gc = git commit
-          alias gp = git push
-          alias gl = git log
-          alias gd = git diff
-          alias .. = cd ..
-          alias ... = cd ../..
 
           # Environment
           $env.EDITOR = "nvim"
