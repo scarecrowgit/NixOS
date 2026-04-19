@@ -8,6 +8,10 @@
       enable = true;
       enableSSHSupport = true;
     };
+    gnupg = {
+      package = pkgs.gnupg24;
+      dirmngr.enable = true;
+    };
   };
 
   nixpkgs.config.allowUnfree = true;
