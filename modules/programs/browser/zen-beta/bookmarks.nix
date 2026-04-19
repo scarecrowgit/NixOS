@@ -62,6 +62,10 @@
             }
           ];
         }
+        {
+          name = "Notion";
+          url = "https://notion.so";
+        }
       ];
     }
   ];

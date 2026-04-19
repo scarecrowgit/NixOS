@@ -40,6 +40,7 @@ in
     ./programs/cli/cava
     ./programs/cli/btop
     ./programs/media/discord
+    ./programs/media/morgen
     ./programs/media/spicetify
     # ./programs/media/youtube-music
     # ./programs/media/thunderbird

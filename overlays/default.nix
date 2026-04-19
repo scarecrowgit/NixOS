@@ -27,5 +27,15 @@ in
       withOpenASAR = true;
       enableAutoscroll = true;
     };
+    morgen = prev.morgen.overrideAttrs (old: {
+      nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ final.asar ];
+      postInstall = (old.postInstall or "") + ''
+        cd $out/opt/Morgen/resources
+        asar extract app.asar app_unpacked
+        sed -i 's/zj&&ee\.app\.disableHardwareAcceleration()/false/g' app_unpacked/dist/main.js
+        asar pack app_unpacked app.asar
+        rm -rf app_unpacked
+      '';
+    });
   };
 }
