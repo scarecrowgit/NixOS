@@ -20,8 +20,7 @@
           # }
           {
             label = "logout";
-            action = "hyprctl dispatch exit 0";
-            # action = "killall -9 Hyprland sleep 2";
+            action = "hyprctl dispatch exit";
             text = "Exit";
             keybind = "e";
           }

@@ -1,37 +1,31 @@
 {
   pkgs,
   lib,
-  host,
   ...
 }:
 let
-  inherit (import ../../hosts/${host}/variables.nix) sddmTheme;
-  sddm-astronaut = pkgs.sddm-astronaut.override {
-    embeddedTheme = "${sddmTheme}";
-    themeConfig =
-      if lib.hasSuffix "black_hole" sddmTheme then
-        {
-          ScreenPadding = "";
-          FormPosition = "center"; # left, center, right
-        }
-      else if lib.hasSuffix "astronaut" sddmTheme then
-        {
-          PartialBlur = "false";
-          FormPosition = "center"; # left, center, right
-        }
-      else if lib.hasSuffix "purple_leaves" sddmTheme then
-        {
-          PartialBlur = "false";
-        }
-      else
-        { };
-  };
+  wallpaper = ../themes/wallpapers/abstract-matte-black-CYAN-5k-8-BIT.png;
+  themeConf = ./sddm-themes/cyan-leaves.conf;
+
+  sddm-astronaut = (pkgs.sddm-astronaut.override {
+    embeddedTheme = "purple_leaves";
+  }).overrideAttrs (old: {
+    installPhase = old.installPhase + ''
+      chmod u+w $out/share/sddm/themes/sddm-astronaut-theme/Backgrounds/
+      cp ${wallpaper} $out/share/sddm/themes/sddm-astronaut-theme/Backgrounds/cyan_wallpaper.png
+      chmod u+w $out/share/sddm/themes/sddm-astronaut-theme/Themes/
+      cp ${themeConf} $out/share/sddm/themes/sddm-astronaut-theme/Themes/cyan-leaves.conf
+      sed -i "s|ConfigFile=Themes/.*\.conf|ConfigFile=Themes/cyan-leaves.conf|" \
+        $out/share/sddm/themes/sddm-astronaut-theme/metadata.desktop
+    '';
+  });
+
   sddmDependencies = [
-        sddm-astronaut
-        pkgs.kdePackages.qtsvg # Sddm Dependency
-        pkgs.kdePackages.qtmultimedia # Sddm Dependency
-        pkgs.kdePackages.qtvirtualkeyboard # Sddm Dependency
-      ];
+    sddm-astronaut
+    pkgs.kdePackages.qtsvg
+    pkgs.kdePackages.qtmultimedia
+    pkgs.kdePackages.qtvirtualkeyboard
+  ];
 in
 {
   services.displayManager = {

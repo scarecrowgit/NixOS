@@ -75,12 +75,12 @@ in
       TimeoutStopSec = 10;
     };
   };
-  services.displayManager.defaultSession = "hyprland";
+  services.displayManager.defaultSession = "hyprland-uwsm";
 
   programs.hyprland = {
     enable = true;
     package = pkgs.hyprland;
-    # withUWSM = true;
+    withUWSM = true;
   };
 
   home-manager.sharedModules = [
@@ -122,8 +122,7 @@ in
             # inputs.hyprsysteminfo.packages.${pkgs.stdenv.hostPlatform.system}.default
           ];
           systemd = {
-            enable = true;
-            variables = [ "--all" ];
+            enable = false; # UWSM handles session management
           };
           settings = {
             "$mainMod" = "SUPER";
@@ -431,7 +430,7 @@ in
               # Window/Session actions
               "$mainMod, Q, killactive"
               "ALT, F4, forcekillactive"
-              "$mainMod, delete, exit" # kill hyperland session
+              "$mainMod, delete, exec, hyprctl dispatch exit" # kill hyprland session
               "$mainMod, W, togglefloating" # toggle the window on focus to float
               "$mainMod SHIFT, G, togglegroup" # toggle the window on focus to float
               "ALT, return, fullscreen" # toggle the window on focus to fullscreen
