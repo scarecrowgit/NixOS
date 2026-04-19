@@ -4,8 +4,15 @@ return {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
     opts = {
-      mapping = { "jk", "jj" },
-      timeout = 200,
+      default_timeout = 200,
+      mappings = {
+        i = {
+          j = {
+            k = "<Esc>",
+            j = "<Esc>",
+          },
+        },
+      },
     },
   },
 
