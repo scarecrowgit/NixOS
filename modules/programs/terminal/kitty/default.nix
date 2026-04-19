@@ -5,7 +5,7 @@
       programs.kitty = {
         enable = true;
         font = {
-          size = 12.0;
+          size = 10.0;
           name = "monospace";
         };
         settings = {
