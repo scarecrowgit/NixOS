@@ -1,4 +1,7 @@
 {
+  # VPN
+  tailscale = true; # Enable Tailscale for remote SSH access
+
   username = "vxwwx"; # auto-set with install.sh, live-install.sh, and rebuild scripts.
 
   # Desktop Environment

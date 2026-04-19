@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 let
   vars = import ./variables.nix;
 in
@@ -58,4 +58,20 @@ in
     ../../modules/programs/misc/samba
   ]
   ++ lib.optional (vars.games == true) ../../modules/core/games.nix;
+
+  # Tailscale
+  environment.systemPackages = lib.mkIf (vars.tailscale == true) [
+    pkgs.tailscale
+  ];
+
+  services.tailscale = lib.mkIf (vars.tailscale == true) {
+    enable = true;
+    extraUpFlags = [ "--ssh" ];
+    openFirewall = true;
+  };
+
+  networking.firewall = lib.mkIf (vars.tailscale == true) {
+    trustedInterfaces = [ "tailscale0" ];
+    allowedUDPPorts = [ 41641 ];
+  };
 }
