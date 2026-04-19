@@ -27,7 +27,7 @@
         gb  = "git branch";
 
         # Utilities
-        wttr = "curl wttr.in";
+        wttr = "curl wttr.in/Batumi";
 
         # NixOS
         rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config#Default";

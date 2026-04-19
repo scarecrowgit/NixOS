@@ -157,6 +157,7 @@ in
               #"[workspace special silent] ${browser} --private-window"
               #"[workspace special silent] ${terminal}"
 
+              "awww-daemon"
               "${lib.getExe wallpaper}"
               "${bar}"
               "swaync"

@@ -8,7 +8,8 @@
     thunderbird
     ayugram-desktop
     morgen
-    notion-app-enhanced 
+    notion-app-enhanced
+    obs-studio
     (python3.withPackages (ps: with ps; [ pyftpdlib ]))
     # pokego # Overlayed
   ];
