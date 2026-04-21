@@ -67,6 +67,7 @@
           starship init nu | save -f ~/.cache/starship/init.nu
 
           $env.TERM = "xterm-256color"
+          $env.GNUPGHOME = ($env.HOME | path join '.private' 'gnupg')
         '';
       };
 
