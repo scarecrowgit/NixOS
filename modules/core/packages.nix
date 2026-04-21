@@ -43,6 +43,7 @@
     unzip # Tool For Handling .zip Files
     claude-code
     opencode
+    zip
     # aider-chat # AI in terminal (Optional: Client only)
     # cmatrix # Matrix Movie Effect In Terminal
     # cowsay # Great Fun Terminal Program
