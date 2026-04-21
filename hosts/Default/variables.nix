@@ -26,7 +26,7 @@
   hostname = "starship";
   videoDriver = "amdgpu"; # nvidia, amdgpu, intel
   nvidiaChannel = "legacy_580"; # stable, latest, beta, legacy_xxx
-  bluetoothSupport = false; # Whether your motherboard supports bluetooth
+  bluetoothSupport = true; # Whether your motherboard supports bluetooth
 
   # Localization
   timezone = "Asia/Tbilisi";
