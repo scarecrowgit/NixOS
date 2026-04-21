@@ -10,6 +10,7 @@
     morgen
     notion-app-enhanced
     obs-studio
+    remmina
     (python3.withPackages (ps: with ps; [ pyftpdlib ]))
     # pokego # Overlayed
   ];
