@@ -172,6 +172,7 @@ in
             input = {
               kb_layout = lib.concatStringsSep "," kbdLayouts;
               kb_variant = "${kbdVariant},";
+              kb_options = "grp:ctrl_space_toggle";
               repeat_delay = 275; # or 212
               repeat_rate = 35;
               numlock_by_default = true;
@@ -461,7 +462,7 @@ in
               "$mainMod, G, exec, launcher games" # game launcher
               # "$mainMod, tab, exec, launcher window" # switch between desktop applications
               # "$mainMod, R, exec, launcher file" # brrwse system files
-              "$mainMod ALT, K, exec, ${getExe keyboardswitch}" # change keyboard layout
+              "CTRL, space, exec, ${getExe keyboardswitch}" # notify on xkb layout switch
               "$mainMod SHIFT, N, exec, swaync-client -t -sw" # swayNC panel
               "$mainMod SHIFT, Q, exec, swaync-client -t -sw" # swayNC panel
               "$mainMod ALT, G, exec, ${getExe gamemode}" # disable hypr effects for gamemode
